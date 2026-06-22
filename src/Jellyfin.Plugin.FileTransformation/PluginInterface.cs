@@ -19,11 +19,15 @@ namespace Jellyfin.Plugin.FileTransformation
 
             if (castedPayload != null)
             {
+                // Resolve services eagerly at registration time. The ServiceProvider captured
+                // by the plugin is scoped and will be disposed after startup. Resolving lazily
+                // inside the callback causes ObjectDisposedException on every subsequent request.
+                // Both ILogger and IServerApplicationHost are singletons, so capturing them here is safe.
+                ILogger logger = FileTransformationPlugin.Instance.ServiceProvider.GetRequiredService<IFileTransformationLogger>();
+                IServerApplicationHost serverApplicationHost = FileTransformationPlugin.Instance.ServiceProvider.GetRequiredService<IServerApplicationHost>();
+
                 writeService.AddTransformation(castedPayload.Id, castedPayload.FileNamePattern, async (path, contents) =>
                 {
-                    ILogger logger = FileTransformationPlugin.Instance.ServiceProvider.GetRequiredService<IFileTransformationLogger>();
-                    IServerApplicationHost serverApplicationHost = FileTransformationPlugin.Instance.ServiceProvider.GetRequiredService<IServerApplicationHost>();
-                    
                     await TransformationHelper.ApplyTransformation(path, contents, castedPayload, logger, serverApplicationHost);
                 });
             }
