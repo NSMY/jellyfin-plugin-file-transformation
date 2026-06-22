@@ -32,5 +32,13 @@ namespace Jellyfin.Plugin.FileTransformation
                 });
             }
         }
+
+        public static void RemoveTransformation(Guid id)
+        {
+            IWebFileTransformationWriteService writeService = FileTransformationPlugin.Instance.ServiceProvider
+                .GetRequiredService<IWebFileTransformationWriteService>();
+
+            writeService.RemoveTransformation(id);
+        }
     }
 }
