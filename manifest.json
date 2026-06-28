@@ -1,0 +1,22 @@
+[
+  {
+    "guid": "aab095e1-3df3-403c-8cc5-61e5e51145e1",
+    "name": "File Transformation",
+    "overview": null,
+    "description": "File Transformation",
+    "owner": "NSMY",
+    "category": "General",
+    "imageUrl": null,
+    "versions": [
+      {
+        "version": "3.0.0.0",
+        "changelog": "temp fork",
+        "targetAbi": "12.0.0.0",
+        "sourceUrl": "https://github.com/NSMY/jellyfin-plugin-file-transformation/releases/download/3.0/Release-12.0.zip",
+        "checksum": "58325C654180BF60AD010D29BADA55EE",
+        "timestamp": "2026-06-28T00:00:00Z",
+        "dependencies": []
+      }
+    ]
+  }
+]
