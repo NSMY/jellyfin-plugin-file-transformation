@@ -1,8 +1,6 @@
-<h1 align="center">SEMI WORKING For Jellyfin 12-RC1</h1>
+<h1 align="center">ORIGINAL IS BACK WORKING, Depreciated </h1>
 
-**Homepage is semi broken because of new layout, if you still want it to work like old layout usersetting>Display>Display Mode>Desktop Legacy. (some things Prob will still be Broken)**
-
-**THIS IS A TEMP FORK WHILE THE ORIGNAL IS UPDATED**
+## [FileTransform](https://github.com/IAmParadox27/jellyfin-plugin-file-transformation)
 
 ><h2 align="center">File Transformation</h2>
 ><h3 align="center">A Jellyfin Plugin</h3>
